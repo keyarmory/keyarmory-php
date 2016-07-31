@@ -10,7 +10,7 @@ composer install keyarmory/keyarmory
 ### Initialization
 ```js
 $keyarmory = new KeyArmory([
-    api_key: 'your_api_key_here'
+    'api_key' => 'your_api_key_here'
 ]);
 ```
 
