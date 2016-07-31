@@ -1,0 +1,16 @@
+{
+    "name": "keyarmory/keyarmory",
+    "description": "Key Armory client library for PHP",
+    "type": "library",
+    "license": "ISC",
+    "authors": [
+        {
+            "name": "Brian Seymour",
+            "email": "imbrianseymour@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "guzzlehttp/guzzle": "6.2.1"
+    }
+}
