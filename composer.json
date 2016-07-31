@@ -12,5 +12,9 @@
     "minimum-stability": "dev",
     "require": {
         "guzzlehttp/guzzle": "6.2.1"
+    },
+    "require-dev": {
+        "ext-curl": "*",
+        "phpunit/phpunit": "^4.0"
     }
 }
