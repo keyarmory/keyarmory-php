@@ -10,7 +10,7 @@ class KeyArmory {
     private $base_url;
 
     function __construct($options) {
-        require '../vendor/autoload.php';
+        //require '../vendor/autoload.php';
 
         $this->api_key = $options['api_key'];
         $this->base_url = 'https://api.keyarmory.com/v1';
