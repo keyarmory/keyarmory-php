@@ -12,7 +12,7 @@ composer require keyarmory/keyarmory
 
 ### Initialization
 ```js
-$keyarmory = new KeyArmory([
+$keyarmory = new \KeyArmory\KeyArmory([
     'api_key' => 'your_api_key_here'
 ]);
 ```
