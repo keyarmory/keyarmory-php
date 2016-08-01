@@ -6,6 +6,9 @@ This is the official PHP client library for the Key Armory Encryption Key Orches
 ```
 composer install keyarmory/keyarmory
 ```
+```
+"keyarmory/keyarmory": "*"
+```
 
 ### Initialization
 ```js
