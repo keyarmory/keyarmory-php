@@ -4,7 +4,7 @@ This is the official PHP client library for the Key Armory Encryption Key Orches
 
 ### Installation
 ```
-composer install keyarmory/keyarmory
+composer require keyarmory/keyarmory
 ```
 ```
 "keyarmory/keyarmory": "*"
