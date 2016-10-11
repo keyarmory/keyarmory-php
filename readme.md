@@ -4,12 +4,15 @@ This is the official PHP client library for the Key Armory Encryption Key Orches
 
 ### Installation
 ```
-composer install keyarmory/keyarmory
+composer require keyarmory/keyarmory
+```
+```
+"keyarmory/keyarmory": "*"
 ```
 
 ### Initialization
 ```js
-$keyarmory = new KeyArmory([
+$keyarmory = new \KeyArmory\KeyArmory([
     'api_key' => 'your_api_key_here'
 ]);
 ```
