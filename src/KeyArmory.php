@@ -43,13 +43,9 @@ class KeyArmory {
 
         $http = new Client();
 
-        $response = $http->post($this->base_url . '/encryption/key', [
+        $response = $http->get($this->base_url . '/encryption/key?key_id=' . $key_id . '&token=' . $token, [
             'headers' => [
                 'x-api-key' => $this->api_key
-            ],
-            'form_params' => [
-                'key_id' => $key_id,
-                'token' => $token
             ]
         ]);
 
