@@ -30,16 +30,16 @@ class KeyArmory {
         $payload = json_decode($response->getBody())->payload;
 
         $encrypted_data = Util::encrypt($data, $payload->key);
-        $encrypted_string = $payload->key_id . ':' . $payload->token . ':' . $encrypted_data;
+        $encrypted_string = 'ka:' . $payload->key_id . ':' . $payload->token . ':' . $encrypted_data;
 
         return $encrypted_string;
     }
 
     public function decrypt($encrypted_string) {
         $pieces = explode(':', $encrypted_string);
-        $key_id = $pieces[0];
-        $token = $pieces[1];
-        $encrypted_data = $pieces[2];
+        $key_id = $pieces[1];
+        $token = $pieces[2];
+        $encrypted_data = $pieces[3];
 
         $http = new Client();
 
