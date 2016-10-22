@@ -80,14 +80,15 @@ class KeyArmory
     }
 
     /**
-     * decrypts the remote identity assigned message and returns the decrypted string.
+     * decrypts the encrypted token string assigned message and returns the decrypted string.
      *
-     * @param string $remoteIdentity
-     * @return string
+     * @param string $encrypted_token_string
+     *
+	 * @return string
      */
-    public function decrypt($remoteIdentity)
+    public function decrypt($encrypted_token_string)
     {
-        list(, $keyId, $token, $encrypted) = explode(':', $message);
+        list(, $keyId, $token, $encrypted) = explode(':', $encrypted_token_string);
 
         $response = $this->client->get(
             $this->composeUrl(
