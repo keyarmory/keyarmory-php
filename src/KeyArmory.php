@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This file is part of the KeyArmory API Software Development Kit for PHP 5.5+.
  *
@@ -80,10 +81,11 @@ class KeyArmory
     }
 
     /**
-     * decrypts the remote identity assigned message and returns the decrypted string.
+     * decrypts the encrypted token string assigned message and returns the decrypted string.
      *
      * @param string $remoteIdentity
-     * @return string
+     *
+	 * @return string
      */
     public function decrypt($remoteIdentity)
     {
