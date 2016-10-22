@@ -51,6 +51,8 @@ class KeyArmory
      */
     public function __construct($apiKey, ClientInterface $client = null)
     {
+    	$this->apiKey = $apiKey;
+
         $this->client = $client instanceof ClientInterface
             ? $client
             : new Client();
