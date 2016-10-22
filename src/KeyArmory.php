@@ -92,7 +92,7 @@ class KeyArmory
 
         $response = $this->client->get(
             $this->composeUrl(
-                'encryption/token',
+                'encryption/key',
                 [
                     'key_id' => $keyId,
                     'token' => $token,
