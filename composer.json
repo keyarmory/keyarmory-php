@@ -7,10 +7,20 @@
         {
             "name": "Brian Seymour",
             "email": "imbrianseymour@gmail.com"
+        },
+        {
+            "name": "Matthias Kaschubowski",
+            "email": "nihylum@gmail.com"
         }
     ],
+    "autoload": {
+        "psr-4": {
+            "KeyArmory\\": "./src/"
+        }
+    },
     "minimum-stability": "dev",
     "require": {
+        "php": ">=5.5",
         "guzzlehttp/guzzle": "6.2.1"
     },
     "require-dev": {

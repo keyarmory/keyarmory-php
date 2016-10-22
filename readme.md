@@ -10,19 +10,17 @@ composer require keyarmory/keyarmory
 "keyarmory/keyarmory": "*"
 ```
 
-### Initialization
-```js
-$keyarmory = new \KeyArmory\KeyArmory([
-    'api_key' => 'your_api_key_here'
-]);
+### Instantiation
+```php
+$keyarmory = new \KeyArmory\KeyArmory('your_api_key_here');
 ```
 
 ### Encryption
-```js
+```php
 $encrypted_string = $keyarmory->encrypt($your_data);
 ```
 
 ### Decryption
-```js
+```php
 $your_data = $keyarmory->decrypt($encrypted_string);
 ```
