@@ -51,6 +51,7 @@ class KeyArmory
      */
     public function __construct($apiKey, ClientInterface $client = null)
     {
+        $this->apiKey = $apiKey;
         $this->client = $client instanceof ClientInterface
             ? $client
             : new Client();
@@ -72,6 +73,7 @@ class KeyArmory
         ]);
 
         $payload = json_decode($response->getBody())->payload;
+
         $encrypted = $this->push($message, $payload->key);
 
         return sprintf('ka:%s:%s:%s', $payload->key_id, $payload->token, $encrypted);
@@ -85,11 +87,11 @@ class KeyArmory
      */
     public function decrypt($remoteIdentity)
     {
-        list(, $keyId, $token, $encrypted) = explode(':', $message);
+        list(, $keyId, $token, $encrypted) = explode(':', $remoteIdentity);
 
         $response = $this->client->get(
             $this->composeUrl(
-                'encryption/token',
+                'encryption/key',
                 [
                     'key_id' => $keyId,
                     'token' => $token,
@@ -138,7 +140,7 @@ class KeyArmory
         $ciphertext_dec = base64_decode($data);
         $iv_dec = substr($ciphertext_dec, 0, $iv_size);
         $ciphertext_dec = substr($ciphertext_dec, $iv_size);
-        return mcrypt_decrypt(MCRYPT_RIJNDAEL_256, $key, $ciphertext_dec, MCRYPT_MODE_CBC, $iv_dec);
+        return trim(mcrypt_decrypt(MCRYPT_RIJNDAEL_256, $key, $ciphertext_dec, MCRYPT_MODE_CBC, $iv_dec));
     }
 
     /**
