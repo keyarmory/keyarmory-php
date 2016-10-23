@@ -1,5 +1,4 @@
 <?php
-
 /**
  * This file is part of the KeyArmory API Software Development Kit for PHP 5.5+.
  *
@@ -18,6 +17,7 @@ class KeyArmoryTest extends \PHPUnit_Framework_TestCase {
 		$key_id = '101';
 		$sample_token = 'base64_encrypted_text';
 
+
 		$keyarmory = new KeyArmory($this->key_id);
 
 		$url =$keyarmory->composeUrl(
@@ -28,7 +28,7 @@ class KeyArmoryTest extends \PHPUnit_Framework_TestCase {
 			]
 		);
 
-		//print $url;
+		print $url;
 		$this->assertEquals(
 			"https://api.keyarmory.com/v1/encryption/token?key_id=$key_id&token=$sample_token",
 			$url,
@@ -46,5 +46,14 @@ class KeyArmoryTest extends \PHPUnit_Framework_TestCase {
 
         $this->assertEquals($unencrypted_string, $original_string);
     }
+
+	function test_pull() {
+		$keyarmory = new KeyArmory($this->key_id);
+
+		echo $keyarmory->pull();
+	}
+
+
+
 
 }
