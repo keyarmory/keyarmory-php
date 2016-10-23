@@ -116,7 +116,7 @@ class KeyArmory
      * @param array $parameters
      * @return string
      */
-    public function composeUrl($path, array $parameters = [])
+    protected function composeUrl($path, array $parameters = [])
     {
         $path = trim($path, '/');
 
@@ -136,7 +136,7 @@ class KeyArmory
      * @param $key
      * @return string
      */
-    public function pull($data, $key)
+    protected function pull($data, $key)
     {
         $iv_size = mcrypt_get_iv_size(MCRYPT_RIJNDAEL_256, MCRYPT_MODE_CBC);
         $ciphertext_dec = base64_decode($data);
