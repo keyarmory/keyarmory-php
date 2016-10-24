@@ -29,6 +29,7 @@
     },
     "require-dev": {
         "ext-curl": "*",
-        "phpunit/phpunit": "^4.0"
+        "phpunit/phpunit": "^4.0",
+        "ext-mcrypt": "*"
     }
 }
