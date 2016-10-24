@@ -48,15 +48,13 @@ class KeyArmory
      * KeyArmory constructor.
      *
      * @param $apiKey
-     * @param ClientInterface|null $client
      */
-    public function __construct($apiKey, ClientInterface $client = null)
+    public function __construct($apiKey)
     {
         $this->apiKey = $apiKey;
-        $this->client = $client instanceof ClientInterface
-            ? $client
-            : new Client();
-        ;
+
+        $this->getSingleton();
+
     }
 
     /**
@@ -159,5 +157,18 @@ class KeyArmory
         $ciphertext = mcrypt_encrypt(MCRYPT_RIJNDAEL_256, $key, $data, MCRYPT_MODE_CBC, $iv);
         $ciphertext = $iv . $ciphertext;
         return base64_encode($ciphertext);
+    }
+
+	/**
+	 * creates a singleton
+	 *
+	 * @return Client|ClientInterface
+	 */
+    protected function getSingleton() {
+	    if ( ! $this->client instanceof ClientInterface ) {
+		    $this->client = new Client();
+	    }
+
+	    return $this->client;
     }
 }
