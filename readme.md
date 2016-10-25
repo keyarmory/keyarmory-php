@@ -12,7 +12,9 @@ composer require keyarmory/keyarmory
 
 ### Instantiation
 ```php
-$keyarmory = new \KeyArmory\KeyArmory('your_api_key_here');
+$keyarmory = new \KeyArmory\KeyArmory([
+    'api_key' => 'your_api_key_here'
+]);
 ```
 
 ### Encryption

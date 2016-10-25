@@ -12,7 +12,9 @@ namespace KeyArmory;
 class KeyArmoryTest extends \PHPUnit_Framework_TestCase {
 
     public function test_encryption() {
-        $keyarmory = new KeyArmory('f0e4c2f76c58916ec258f246851bea091d14d4247a2fc3e18694461b1816e13b');
+        $keyarmory = new KeyArmory([
+            'api_key' => 'f0e4c2f76c58916ec258f246851bea091d14d4247a2fc3e18694461b1816e13b'
+        ]);
 
         $original_string = 'test';
 
